@@ -1,0 +1,60 @@
+<!-- MENU MOBILE -->
+<div class="show-mobile">
+  <div>
+    <button (click)="toggleSideMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
+    </button>
+    <a routerLink="home">
+      <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
+    </a>
+    <a href="">
+      <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+    </a>
+  </div>
+
+  <!-- SIDE MENU -->
+  <div class="side-menu" [class.active]="activeSideMenu">
+    <button (click)="toggleSideMenu()">×</button>
+    <ul>
+      <li>
+        <a routerLink="home">All</a>
+      </li>
+      <li *ngFor="let category of categories">
+        <a
+          [routerLink]="['/category', category.id]"
+        >{{ category.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- MENU DESKTOP -->
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
+      </a>
+      <ul>
+        <li>
+          <a routerLinkActive="active" routerLink="home">All</a>
+        </li>
+        <li *ngFor="let category of categories">
+          <a
+            routerLinkActive="active"
+            [routerLink]="['/category', category.id]"
+          >{{ category.name }}</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="info">
+      <div class="account">juan@example.com</div>
+      <div>
+        <a href="#">
+          <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

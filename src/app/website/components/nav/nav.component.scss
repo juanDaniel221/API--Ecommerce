@@ -1,0 +1,108 @@
+.show-mobile, .hide-mobile {
+  margin-bottom: 1.6rem;
+}
+
+.show-mobile {
+  display: block;
+  box-shadow: 0px 2px 5px rgb(black, .2);
+  > div {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    button {
+      cursor: pointer;
+      border: 0;
+      background: transparent;
+    }
+  }
+  .side-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform: translateX(-100%);
+    transition: all ease-out .5s;
+    z-index: 10;
+    &.active {
+      transform: translateX(0);
+    }
+    > button {
+      position: absolute;
+      top: 0;
+      cursor: pointer;
+      right: 0;
+      color: black;
+      font-size: 4.5rem;
+    }
+    > ul li a {
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-top: 3rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    > ul li a:hover {
+      color: #c1e3c5;
+    }
+  }
+}
+
+.hide-mobile {
+  display: none;
+  box-shadow: 0px 2px 5px rgb(black, .2);
+  > div {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    margin-right: 1em;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    ul {
+      display: flex;
+      list-style: none;
+      a {
+        margin: 0 .2em;
+        text-decoration: none;
+        border: 1px solid var(--white);
+        padding: 8px;
+        text-decoration: none;
+        color: var(--very-light-pink);
+        font-weight: 700;
+        &.active {
+          border: 1px solid var(--hospital-green);
+          border-radius: 12px;
+          color: var(--hospital-green);
+        }
+      }
+    }
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    .account {
+      margin-right: .5em;
+    }
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 768px) {
+  .show-mobile {
+    display: none;
+  }
+  .hide-mobile {
+    display: block;
+  }
+}

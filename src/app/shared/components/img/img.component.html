@@ -1,0 +1,11 @@
+<img class="product-img"
+  *ngIf="img; else defaultImage"
+  [src]="img"
+  (load)="imgLoad()"
+  (error)="imgError()"
+/>
+<ng-template #defaultImage>
+  <img class="product-img" [src]="imageDefault" alt="">
+</ng-template>
+
+<!-- <h3>{{ counter }}</h3> -->

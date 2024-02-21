@@ -1,0 +1,46 @@
+// RESET
+@use './assets/styles/reset.scss';
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
+
+// GLOBALS
+:root {
+  --very-light-pink: #C7C7C7;
+  --text-input-field: #F7F7F7;
+  --hospital-green: #ACD9B2;
+  --red: #ef3939;
+  --white: #FFFFFF;
+  --black: #000000;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif !important;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.products--grid {
+  app-img img {
+    border-radius: 12px;
+  }
+}
+
+.swal2-container .swal2-popup {
+  font-size: 1.6rem;
+  > .swal2-actions button {
+    background-color: var(--hospital-green);
+    box-shadow: none;
+  }
+}
